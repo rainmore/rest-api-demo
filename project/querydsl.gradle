@@ -1,0 +1,18 @@
+apply plugin: 'com.ewerk.gradle.plugins.querydsl'
+
+configurations {
+    provided
+}
+
+dependencies {
+    provided group: 'com.querydsl', name: 'querydsl-apt',   version: project.ext.get('querydsl.version')
+    compile  group: 'com.querydsl', name: 'querydsl-jpa',   version: project.ext.get('querydsl.version')
+    compile  group: 'com.querydsl', name: 'querydsl-scala', version: project.ext.get('querydsl.version')
+}
+
+querydsl {
+    library = 'com.querydsl:querydsl-apt:' + project.ext.get('querydsl.version')
+    jpa = true
+}
+
+sourceSets.main.java.srcDirs += querydsl.querydslSourcesDir

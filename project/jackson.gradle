@@ -1,0 +1,14 @@
+dependencies {
+    compile group: 'com.fasterxml.jackson.core',     name: 'jackson-core',                version: project.ext.get('jackson.version')
+
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8',       version: project.ext.get('jackson.version')
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310',     version: project.ext.get('jackson.version')
+//    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-hibernate4', version: project.ext.get('jackson.version')
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-hibernate5', version: project.ext.get('jackson.version')
+
+    // compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-thrift',   version: '2.4.0'
+    // compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-protobuf', version: '2.4.0'
+
+    compile group: 'com.fasterxml.jackson.module', name: sclArt('jackson-module-scala'),  version: '2.9.1'
+//    compile group: 'com.fasterxml.jackson.module', name: sclArt('jackson-module-scala'),  version: project.ext.get('jackson.version')
+}

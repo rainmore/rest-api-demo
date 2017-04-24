@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+}
+
+plugins {
+    id 'com.querydsl.generator'               version '1.2.2' apply false
+    id 'com.ewerk.gradle.plugins.querydsl'    version '1.0.9' apply false
+    id 'org.springframework.boot'             version '1.5.8.RELEASE' apply true
+}
+
+description = 'REST API Demo'
+group 'net.rainmore'
+version '1.0.0'
+
+
+allprojects {
+    repositories {
+        mavenLocal() // for testing only
+        mavenCentral() // for testing only
+        maven { url "http://central.maven.org/maven2/" }
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'application'
+
+apply from: 'project/logging.gradle'
+apply from: 'project/querydsl.gradle'
+apply from: 'project/db.gradle'
+apply from: 'project/spring.gradle'
+apply from: 'project/boot.gradle'
+apply from: 'project/tests.gradle'
+
+mainClassName = [group, name, 'Application'].join('.')
+
+dependencies {
+    compile project(':elements')
+}
+
+

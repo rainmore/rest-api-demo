@@ -1,0 +1,28 @@
+//apply plugin: 'com.github.maiflai.scalatest'
+
+dependencies {
+    testCompile group: 'com.typesafe', name: 'config',            version: project.ext.get('typesafe.config.version')
+
+//    testCompile group: 'org.scalatest', name: sclArt('scalatest'), version: project.ext.get('scalatest.version')
+
+    testCompile group: 'org.springframework',          name: 'spring-test',                    version: project.ext.get('spring.version')
+    testCompile group: 'org.springframework.security', name: 'spring-security-test',           version: project.ext.get('spring.security.version')
+    testCompile group: 'org.springframework.boot',     name: 'spring-boot-test-autoconfigure', version: project.ext.get('spring.boot.version')
+
+    // https://mvnrepository.com/artifact/junit/junit
+    testCompile('junit:junit:4.12'){
+        exclude group: 'org.hamcrest'
+    }
+
+
+//    testCompile group: 'javax.servlet',                name: 'javax.servlet-api',    version: '3.1.0'
+    testCompile group: 'org.hamcrest',                 name: 'hamcrest-all',         version: '1.3'
+    testCompile group: 'org.mockito',                  name: 'mockito-all',          version: '1.10.19'
+    testCompile group: 'com.jayway.jsonpath',          name: 'json-path',            version: '2.2.0'
+    testCompile group: 'com.jayway.jsonpath',          name: 'json-path-assert',     version: '2.2.0'
+
+    testCompile group: 'io.codearte.jfairy',           name: 'jfairy',               version: '0.5.3'
+
+//    testRuntime group: 'org.pegdown', name: 'pegdown', version: '1.6.0'
+//    testRuntime group: 'org.apache.tika', name: 'tika-java7', version: '1.12'
+}

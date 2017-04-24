@@ -1,0 +1,9 @@
+dependencies {
+//    compile group: 'mysql',       name: 'mysql-connector-java', version: project.ext.get('mysql.version')
+//    compile group: 'com.zaxxer',  name: 'HikariCP',             version: project.ext.get('hikaricp.version')
+
+    compile group: 'org.hibernate', name: 'hibernate-validator',     version: '5.0.2.Final'
+
+    // https://mvnrepository.com/artifact/org.hsqldb/hsqldb
+    runtime group: 'org.hsqldb', name: 'hsqldb', version: '2.4.0'
+}
