@@ -1,5 +1,6 @@
 package net.rainmore.modules.accounts
 
-trait AccountRepository {
+import net.rainmore.domains.accounts.Account
+import net.rainmore.modules.BaseRepository
 
-}
+trait AccountRepository extends BaseRepository[Account, java.lang.Long]

@@ -1,5 +1,5 @@
 package net.rainmore.controllers
 
-class BaseRestController {
+abstract class BaseRestController {
 
 }
