@@ -28,14 +28,18 @@ allprojects {
 apply plugin: 'idea'
 apply plugin: 'application'
 
+apply from: 'project/common.gradle'
+apply from: 'project/assemble.gradle'
+apply from: 'project/scala.gradle'
 apply from: 'project/logging.gradle'
 apply from: 'project/querydsl.gradle'
 apply from: 'project/db.gradle'
 apply from: 'project/spring.gradle'
 apply from: 'project/boot.gradle'
 apply from: 'project/tests.gradle'
+apply from: 'project/swagger.gradle'
 
-mainClassName = [group, name, 'Application'].join('.')
+mainClassName = [group, 'Application'].join('.')
 
 dependencies {
     compile project(':elements')

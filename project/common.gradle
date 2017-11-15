@@ -3,7 +3,7 @@ dependencies {
     compile group: 'org.apache.commons', name: 'commons-lang3',     version: project.ext.get('apache.commons.lang.version')
 //    compile group: 'org.apache.commons', name: 'commons-email',     version: project.ext.get('apache.commons.email.version')
 //    compile group: 'commons-codec',      name: 'commons-codec',     version: project.ext.get('apache.commons.codec.version')
-//    compile group: 'commons-validator',  name: 'commons-validator', version: project.ext.get('apache.commons.validator.version')
+    compile group: 'commons-validator',  name: 'commons-validator', version: project.ext.get('apache.commons.validator.version')
 // https://mvnrepository.com/artifact/commons-io/commons-io
 //    compile group: 'commons-io',         name: 'commons-io',        version: project.ext.get('apache.commons.io.version')
 
