@@ -1,4 +1,4 @@
-package net.rainmore.controllers.accounts.dto
+package net.rainmore.controllers.v1.accounts.dto
 
 import javax.inject.Inject
 

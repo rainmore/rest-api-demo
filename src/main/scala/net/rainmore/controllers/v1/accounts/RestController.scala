@@ -1,10 +1,10 @@
-package net.rainmore.controllers.accounts
+package net.rainmore.controllers.v1.accounts
 
 import javax.inject.Inject
 import javax.validation.Valid
 
 import net.rainmore.controllers.{BaseRestController, JsonResponse}
-import net.rainmore.controllers.accounts.dto.{AccountDto, AccountDtoValidator}
+import net.rainmore.controllers.v1.accounts.dto.{AccountDto, AccountDtoValidator}
 import net.rainmore.domains.accounts.Account
 import net.rainmore.modules.accounts.AccountService
 import org.slf4j.LoggerFactory

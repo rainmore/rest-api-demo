@@ -1,4 +1,4 @@
-package net.rainmore.controllers.accounts.dto
+package net.rainmore.controllers.v1.accounts.dto
 
 import com.fasterxml.jackson.annotation.{JsonAutoDetect, JsonCreator, JsonProperty}
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility
