@@ -5,6 +5,8 @@ import net.rainmore.domains.common.addresses.Address;
 import net.rainmore.domains.common.emails.Email;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +14,10 @@ import java.util.List;
 @Table(name = "accounts")
 public class Account implements Model {
 
+    public static final int FIRST_NAME_MAX_LENGTH = 200;
+    public static final int LAST_NAME_MAX_LENGTH = 200;
+
+    // TODO apart from ID, UUID should be introduced to support API
     private Long id;
     private String firstName;
     private String lastName;
@@ -31,6 +37,8 @@ public class Account implements Model {
     }
 
     @Column(name = "firstName", nullable = false)
+    @Size(max = FIRST_NAME_MAX_LENGTH)
+    @NotNull
     public String getFirstName() {
         return firstName;
     }
@@ -41,6 +49,8 @@ public class Account implements Model {
     }
 
     @Column(name = "lastName", nullable = false)
+    @Size(max = LAST_NAME_MAX_LENGTH)
+    @NotNull
     public String getLastName() {
         return lastName;
     }

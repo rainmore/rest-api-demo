@@ -3,14 +3,19 @@ package net.rainmore.domains.common.emails;
 import net.rainmore.domains.Model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity(name = "common.Email")
 @Table(name = "emails")
 public class Email implements Model {
 
+    public static final int EMAIL_MAX_LENGTH  = 255;
+
+    // TODO apart from ID, UUID should be introduced to support API
     private Long   id;
     private Type   type;
-    private String name;
+    private String email;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -26,6 +31,7 @@ public class Email implements Model {
 
     @Column(name = "type", nullable = false)
     @Enumerated(value = EnumType.STRING)
+    @NotNull
     public Type getType() {
         return type;
     }
@@ -35,12 +41,16 @@ public class Email implements Model {
         return this;
     }
 
-    public String getName() {
-        return name;
+    @Column(name = "email")
+    @Size(max = EMAIL_MAX_LENGTH)
+    @NotNull
+    @org.hibernate.validator.constraints.Email
+    public String getEmail() {
+        return email;
     }
 
-    public Email setName(String name) {
-        this.name = name;
+    public Email setEmail(String email) {
+        this.email = email;
         return this;
     }
 }
